@@ -10,21 +10,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20'
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
 
-    - name: Install PM2 & Dependencies
-      run: |
-        npm install -g pm2
-        npm install
+      - name: Install PM2 & Dependencies
+        run: |
+          npm install -g pm2
+          npm install
 
-    - name: Start PRABATH-MD Bot
-      run: |
-        node start.js &
-        echo "PRABATH-MD Bot එක සාර්ථකව GitHub Actions ඇතුළේ run වෙනවා..."
-        sleep 21600
+      - name: Start PRABATH-MD Bot
+        run: |
+          node start.js &
+          echo "PRABATH-MD Bot එක සාර්ථකව GitHub Actions ඇතුළේ run වෙනවා..."
+          sleep 21600
