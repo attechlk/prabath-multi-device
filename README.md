@@ -100,6 +100,6 @@
 <p>
   <code>Released: 2023.08.24</code> | <code>Last Updated: 2026.01.04</code>
 </p>
-<p>Made with ❤️ in Sri Lanka 🇱🇰</p>
+<p>Made with ❤️ in Sri Lankaa 🇱🇰</p>
 
 </div>
