@@ -1,18 +1,30 @@
-name: Sync to Hugging Face spaces
+name: PRABATH-MD Runner
+
 on:
   push:
     branches: [ main ]
   workflow_dispatch:
 
 jobs:
-  sync-to-hub:
+  run-bot:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          lfs: true
-      - name: Push to HF
-        env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push --force https://aathik2008:$HF_TOKEN@huggingface.co/spaces/aathik2008/my-whatsapp-bot main
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Install PM2 & Dependencies
+      run: |
+        npm install -g pm2
+        npm install
+
+    - name: Start PRABATH-MD Bot
+      run: |
+        node start.js &
+        echo "PRABATH-MD Bot එක සාර්ථකව GitHub Actions ඇතුළේ run වෙනවා..."
+        sleep 21600
